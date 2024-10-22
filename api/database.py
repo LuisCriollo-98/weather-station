@@ -21,7 +21,22 @@ users_model= '''
         username TEXT NOT NULL,
         email TEXT NOT NULL,
         password TEXT NOT NULL,
-        role TEXT NOT NULL,
+        role INTEGER NOT NULL DEFAULT 1,
+        status BOOLEAN DEFAULT true,
+        created_at TIMESTAMP DEFAULT (datetime('now','localtime')),
+        updated_at TIMESTAMP DEFAULT (datetime('now','localtime')),
+        deleted_at NULL
+    )
+'''
+#Sensor model
+sensor_model= '''
+    CREATE TABLE IF NOT EXISTS sensors (
+        id INTEGER PRIMARY KEY,
+        name TEXT NOT NULL,
+        model TEXT NOT NULL,
+        description TEXT NOT NULL,
+        url_datasheet TEXT NULL,
+        url_image TEXT NULL,
         status BOOLEAN DEFAULT true,
         created_at TIMESTAMP DEFAULT (datetime('now','localtime')),
         updated_at TIMESTAMP DEFAULT (datetime('now','localtime')),
@@ -30,6 +45,7 @@ users_model= '''
 '''
 #Execute query
 cur.execute(users_model)
+cur.execute(sensor_model)
 
 #close connection
-con.close()
+#con.close()
