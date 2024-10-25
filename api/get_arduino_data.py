@@ -5,11 +5,12 @@ Devolper: Luis C.
 '''
 #Import Libraries
 import serial
+import serial.tools.list_ports ##Detectar los puertos abiertos
 import time
+from detect_arduino_port import p
 
 #Arduino port
-
-arduino_port = 'COM7'
+arduino_port = p
 arduino_bau = 9600
 
 service = serial.Serial(

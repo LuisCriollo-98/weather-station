@@ -26,5 +26,5 @@ hum=dht.readHumidity();
 
 Serial.print(temp);
 Serial.print(",")
-Serial.print(hum);
+Serial.println(hum);
 }
