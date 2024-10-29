@@ -30,4 +30,10 @@ while True:
 
         print(f"Temperature: {temp} °C")
         print(f"Humidity: {hum}%")
+
+        # 1. Create new model data called test_data
+        # Fields: id, temp, hum, created_at
+        # 2. Create a method tio insert data into test_data
+        # 3. Update method: Insert data when detect changes in temp or hum
+
     time.sleep(1)
